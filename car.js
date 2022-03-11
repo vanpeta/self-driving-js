@@ -4,8 +4,16 @@ class Car {
         this.y = y;
         this.width = width;
         this.height = height;
-        this.image = new Image(this.width, this.height);
-        this.image.src = './car-image.png';
+        // initialize all images
+        this.stillImage = new Image(this.width, this.height);
+        this.stillImage.src = './car-image.png';
+        this.imageForward = new Image(this.width, this.height);
+        this.imageForward.src = './car-forward-image.png';
+        this.imageBackward = new Image(this.width, this.height);
+        this.imageBackward.src = './car-backward-image.png';
+
+        // initialize image
+        this.image = this.stillImage;
 
         this.speed = 0;
         this.acceleration = 0.2;
@@ -22,11 +30,11 @@ class Car {
 
     #move() {
         if(this.controls.forward) {
-            this.image.src = './car-forward-image.png';
+            this.image = this.imageForward;
             this.speed += this.acceleration;
         }
         if(this.controls.reverse) {
-            this.image.src = './car-backward-image.png';
+            this.image = this.imageBackward;
             this.speed -= this.acceleration;
         }
 
