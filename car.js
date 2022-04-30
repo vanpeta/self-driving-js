@@ -140,7 +140,7 @@ class Car {
         this.y -= Math.cos(this.angle)*this.speed;
     }
 
-    draw(ctx, traffic) {
+    draw(ctx, traffic, drawSensor = false) {
         if(this.damaged){
             this.image = this.imageDamage;
         }
@@ -162,7 +162,7 @@ class Car {
         ctx.fill();
         ctx.restore();
 
-        if(this.sensor) {
+        if(this.sensor && drawSensor) {
             this.sensor.draw(ctx);
         }
     }
