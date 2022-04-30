@@ -1,5 +1,12 @@
 body {
     margin: 0;
+}
+
+#controls {
+    display: block;
+}
+
+#graffics {
     background: darkgray;
     overflow: hidden;
     display: flex;
@@ -7,16 +14,14 @@ body {
     align-items: center;
 }
 
-#vertical-buttons {
-    display: flex;
-    flex-direction: column;
-}
-
 button {
     border: none;
     border-radius: 5px;
     padding: 5px;
     margin: 2px;
+}
+
+button, .dropdown-item {
     cursor: pointer;
 }
 
