@@ -144,6 +144,7 @@ function annimate(time) {
     });
 
     bestCar = cars.find(car =>
+        // fittest ecuation
         car.y == Math.min(...cars.map(c => c.y))
     );
 
